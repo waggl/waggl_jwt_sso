@@ -1,3 +1,5 @@
+var secret_key = 'adskfjlksflksgjl'
+
 DateTime now_ = DateTime.UtcNow;
 DateTime EPoch = new DateTime(1970, 1, 1, 0, 0, 0);
 
