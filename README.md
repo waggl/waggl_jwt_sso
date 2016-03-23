@@ -63,7 +63,7 @@ For Example:
 
 ## Generating Redirect
 
-You create the redirect URL in the following way "https://app.waggl.com/\<return\_to\_path>?sso\_jwt=<jwt>&\<return\_to\_params>".  Note, return\_to\_params is an optional parameter that will only be included when needed.
+You create the redirect URL in the following way https://app.waggl.com/\<return\_to\_path>?sso\_jwt=<jwt>&\<return\_to\_params>.  Note, return\_to\_params is an optional parameter that will only be included when needed.
 
 For example, with the following values:
 
