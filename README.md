@@ -27,8 +27,9 @@ See [http://jwt.io/#libraries](http://jwt.io/#libraries) to find a JWT library i
 
 	{
 	
-	  data:  
-		email: email address of user  
+		data: {
+			email: email address of user
+			}
 		iat: current date/time  
 		nbf: date/time when this token should not be usable before.  This should be 3 mins before the current time to allow for any differences is machine clocks.  
 		exp: date/time when this token should expire.  After this time, the link will no longer work. We recommend that this is 5 mins after the current time.  
