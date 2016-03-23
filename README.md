@@ -10,12 +10,12 @@ Waggl supports using JWT (JSON Web Tokens) as a Single Sign On (SSO) mechanism. 
 1. User clicks a Waggl link.
 2. They are redirected to an SSO URL that you provide us.  When redirecting we will add a parameter that tells you where to send them after you authenticate.
 3. They go to your URL and authenticate (using Active Directory or other internal authentication system).
-4. After successful authentication you redirect them to the Waggl by taking the URL we have passed to you and adding a JWT Token which is unique to this user.
+4. After successful authentication you redirect them to Waggl by taking the URL we have passed to you and adding a JWT Token which is unique to this user.
 5. Waggl processes and verifies JWT Token which identifies the email for the user and logs them in.
 
 ## Processing Requests to your SSO URL
 
-You will provide us a URL that we will redirect your users to for authentication.  For example, [https://yourcompany.com/waggl/sso/](https://yourcompany.com/waggl/sso/).  We will include 2 parameters - return\_to\_path and return\_to\_parameters.  When they come to your URL, you will do the following:
+You will provide us a URL that we will redirect your users to for authentication.  For example, https://yourcompany.com/waggl/sso/.  We will include 2 parameters - return\_to\_path and return\_to\_parameters.  When they come to your URL, you will do the following:
 
 1. Authenticate them (if needed)
 2. Generate JWT Token (see below)
