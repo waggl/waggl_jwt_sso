@@ -25,16 +25,16 @@ You will provide us a URL that we will redirect your users to for authentication
 
 See [http://jwt.io/#libraries](http://jwt.io/#libraries) to find a JWT library in the language of your choice.  We will provide you a secret key that is unique to your organization for signing your token.  We require the HS512 hash algorithm for signing. Your token should contain the following json data:
 
-{
-
-  **data**:  
-	**email:** email address of user  
-	**iat:** current date/time  
-	**nbf:** date/time when this token should not be usable before.  This should be 3 mins before the current time to allow for any differences is machine clocks.  
-	**exp:** date/time when this token should expire.  After this time, the link will no longer work. We recommend that this is 5 mins after the current time.  
-	**aud:** "www.waggl.com"
+	{
 	
-}
+	  data:  
+		email: email address of user  
+		iat: current date/time  
+		nbf: date/time when this token should not be usable before.  This should be 3 mins before the current time to allow for any differences is machine clocks.  
+		exp: date/time when this token should expire.  After this time, the link will no longer work. We recommend that this is 5 mins after the current time.  
+		aud: "www.waggl.com"
+		
+	}
 
 Note: Dates should be the number of seconds since the Epoch (1970-01-01T00:00:00Z UTC).
 
