@@ -85,9 +85,11 @@ Then the redirect URL would be: https://app.waggl.com/i/9745804b?sso_jwt=xxxxx.y
 
 ## Example Files
 
-A Dot Net example is [here.](https://raw.githubusercontent.com/waggl/waggl_jwt_sso/master/example_code/dot_net.cs)
+You can view example code for different languages below:
 
-A Ruby on Rails example is [here.](https://raw.githubusercontent.com/waggl/waggl_jwt_sso/master/example_code/ssos_controller.rb)
+- [Dot Net](https://github.com/waggl/waggl_jwt_sso/blob/master/example_code/dot_net.cs)
+
+- [Ruby on Rails] (https://github.com/waggl/waggl_jwt_sso/blob/master/example_code/ssos_controller.rb)
 
 
 
