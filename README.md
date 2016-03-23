@@ -71,7 +71,7 @@ For example, with the following values:
 * return\_to\_params: "view=vote&page=1"
 * jwt: "xxxxx.yyyyy.zzzzz"
 
-Then the redirect URL would be https://app.waggl.com/i/9745804b?sso\_jwt=xxxxx.yyyyy.zzzzz&view=vote&page=1
+Then the redirect URL would be https://app.waggl.com/i/9745804b?sso_jwt=xxxxx.yyyyy.zzzzz&view=vote&page=1
 
 
 
@@ -81,7 +81,7 @@ Or if there is no return\_to\_params:
 
 * jwt: "xxxxx.yyyyy.zzzzz"
 
-Then the redirect URL would be: https://app.waggl.com/i/9745804b?sso\_jwt=xxxxx.yyyyy.zzzzz]
+Then the redirect URL would be: https://app.waggl.com/i/9745804b?sso_jwt=xxxxx.yyyyy.zzzzz]
 
 ## Example Files
 
