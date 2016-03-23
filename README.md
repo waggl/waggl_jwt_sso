@@ -29,7 +29,7 @@ See [http://jwt.io/#libraries](http://jwt.io/#libraries) to find a JWT library i
 	
 		data: {
 			email: email address of user
-			}
+		}
 		iat: current date/time  
 		nbf: date/time when this token should not be usable before.  This should be 3 mins before the current time to allow for any differences is machine clocks.  
 		exp: date/time when this token should expire.  After this time, the link will no longer work. We recommend that this is 5 mins after the current time.  
@@ -38,6 +38,26 @@ See [http://jwt.io/#libraries](http://jwt.io/#libraries) to find a JWT library i
 	}
 
 Note: Dates should be the number of seconds since the Epoch (1970-01-01T00:00:00Z UTC).
+
+## Including Tags in JWT Token
+
+You can optionally include tag information about the user.  The tags need to be setup in the Waggl system to be used (if you would like to use tags please discuss with your account manager).  To use them you add additional attributes to the data object:
+
+	{
+	
+		data: {
+			email: email address of user
+			tags: {
+				Department: "Sales",
+				Region: "West Coast"
+			}
+		}
+		iat: current date/time  
+		nbf: date/time when this token should not be usable before.  This should be 3 mins before the current time to allow for any differences is machine clocks.  
+		exp: date/time when this token should expire.  After this time, the link will no longer work. We recommend that this is 5 mins after the current time.  
+		aud: "www.waggl.com"
+		
+	}
 
 ## Generating Redirect
 
