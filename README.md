@@ -67,8 +67,8 @@ You create the redirect URL in the following way https:<i></i>//app.waggl.com/\<
 
 For example, with the following values:
 
-* return\_to\_path: "i/9745804b"
-* return\_to\_params: "view=vote&page=1"
+* return\_to\_path: "i%2F9745804b" (URL encoded version of 'i/9745804b')
+* return\_to\_params: "view%3Dvote%26page%3D1" (URL encoded version of 'view=vote&page=1')
 * jwt: "xxxxx.yyyyy.zzzzz"
 
 Then the redirect URL would be https://app.waggl.com/i/9745804b?sso_jwt=xxxxx.yyyyy.zzzzz&view=vote&page=1
@@ -77,7 +77,7 @@ Then the redirect URL would be https://app.waggl.com/i/9745804b?sso_jwt=xxxxx.yy
 
 Or if there is no return\_to\_params:
 
-* return\_to\_path: "i/9745804b"
+* return\_to\_path: "i%2F9745804b" (URL encoded version of 'i/9745804b')
 
 * jwt: "xxxxx.yyyyy.zzzzz"
 
