@@ -21,6 +21,8 @@ var payload = new
 //using jose-jwt lib
 string token = Jose.JWT.Encode(payload, Encoding.UTF8.GetBytes(secret_key), Jose.JwsAlgorithm.HS512);
 
+string returntoPath = Convert.ToString(Request.QueryString["return_to_path"]);
+
 string returntoparams = Convert.ToString(Request.QueryString["return_to_params"]);
  
 string returntoparams = returntoParams == null ? "" : @"&" + returntoParams;
