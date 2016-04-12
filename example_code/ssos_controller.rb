@@ -9,7 +9,7 @@ class SsosController < ApplicationController
   private
 
   def redirect_url
-    base = "#{SECRET_KEY + params[:return_to_path]}?sso_jwt=#{jwt_token}"
+    base = "#{WAGGL_SERVER + params[:return_to_path]}?sso_jwt=#{jwt_token}"
     if params[:return_to_params].present?
       base = "#{base}&#{params[:return_to_params]}"
     end
