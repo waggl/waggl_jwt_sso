@@ -83,7 +83,7 @@ Or if there is no return\_to\_params:
 
 Then the redirect URL would be: https://app.waggl.com/i/9745804b?sso_jwt=xxxxx.yyyyy.zzzzz]
 
-## Example Files
+## Example Code
 
 You can view example code for different languages below:
 
@@ -91,6 +91,6 @@ You can view example code for different languages below:
 
 - [Ruby on Rails] (https://github.com/waggl/waggl_jwt_sso/blob/master/example_code/ssos_controller.rb)
 
-
+- [PHP] (https://github.com/waggl/waggl_jwt_sso/blob/master/example_code/php_example.php)
 
 
