@@ -10,12 +10,12 @@ Waggl supports using JWT (JSON Web Tokens) as a Single Sign On (SSO) mechanism. 
 1. User clicks a Waggl link.
 2. They are redirected to an SSO URL that you provide us.  When redirecting we will add a parameter that tells you where to send them after you authenticate.
 3. They go to your URL and authenticate (using Active Directory or other internal authentication system).
-4. After successful authentication you redirect them to the Waggl by taking the URL we have passed to you and adding a JWT Token which is unique to this user.
+4. After successful authentication you redirect them to Waggl by taking the URL we have passed to you and adding a JWT Token which is unique to this user.
 5. Waggl processes and verifies JWT Token which identifies the email for the user and logs them in.
 
 ## Processing Requests to your SSO URL
 
-You will provide us a URL that we will redirect your users to for authentication.  For example, [https://yourcompany.com/waggl/sso/](https://yourcompany.com/waggl/sso/).  We will include 2 parameters - return\_to\_path and return\_to\_parameters.  When they come to your URL, you will do the following:
+You will provide us a URL that we will redirect your users to for authentication.  For example, https:<i></i>//yourcompany.com/waggl/sso/.  We will include 2 parameters - return\_to\_path and return\_to\_params.  When they come to your URL, you will do the following:
 
 1. Authenticate them (if needed)
 2. Generate JWT Token (see below)
@@ -27,44 +27,69 @@ See [http://jwt.io/#libraries](http://jwt.io/#libraries) to find a JWT library i
 
 	{
 	
-	  data:  
-		email: email address of user  
-		iat: current date/time  
-		nbf: date/time when this token should not be usable before.  This should be 3 mins before the current time to allow for any differences is machine clocks.  
-		exp: date/time when this token should expire.  After this time, the link will no longer work. We recommend that this is 5 mins after the current time.  
+		data: {
+			email: <email address of user>
+		}
+		iat: <current date/time>,  
+		nbf: <date/time when this token should not be usable before.  This should be 3 mins before the current time to allow for any differences is machine clocks.>,  
+		exp: <date/time when this token should expire.  After this time, the link will no longer work. We recommend that this is 5 mins after the current time.>,  
 		aud: "www.waggl.com"
 		
 	}
 
 Note: Dates should be the number of seconds since the Epoch (1970-01-01T00:00:00Z UTC).
 
+## Including Tags in JWT Token
+
+You can optionally include tag information about the user.  The tags need to be setup in the Waggl system to be used (if you would like to use tags please discuss with your account manager).  To use them you add additional attributes to the data object:
+	
+	data: {
+		email: <email address of user>
+		tags: {
+			<tag category1>: <tag value1>,
+			<tag category2>: <tag value2>,
+		}
+	}
+	
+For Example:
+
+	data: {
+		email: bob@yourcompany.com
+		tags: {
+			Department: "Sales",
+			Region: "West Coast",
+		}
+	}
+
 ## Generating Redirect
 
-You create the redirect URL in the following way "https://app.waggl.com/\<return\_to\_path>?sso\_jwt=<jwt>&\<return\_to\_params>".  Note, return\_to\_params is an optional parameter that will only be included when needed.
+You create the redirect URL in the following way https:<i></i>//app.waggl.com/\<return\_to\_path>?sso\_jwt=<jwt>&\<return\_to\_params>.  Note, return\_to\_params is an optional parameter that will only be included when needed.
 
 For example, with the following values:
 
-* return\_to\_path: "i/9745804b"
-* return\_to\_params: "view=vote&page=1"
+* return\_to\_path: "i%2F9745804b" (URL encoded version of 'i/9745804b')
+* return\_to\_params: "view%3Dvote%26page%3D1" (URL encoded version of 'view=vote&page=1')
 * jwt: "xxxxx.yyyyy.zzzzz"
 
-Then the redirect URL would be https://app.waggl.com/i/9745804b?sso\_jwt=xxxxx.yyyyy.zzzzz&view=vote&page=1
+Then the redirect URL would be https://app.waggl.com/i/9745804b?sso_jwt=xxxxx.yyyyy.zzzzz&view=vote&page=1
 
 
 
 Or if there is no return\_to\_params:
 
-* return\_to\_path: "i/9745804b"
+* return\_to\_path: "i%2F9745804b" (URL encoded version of 'i/9745804b')
 
 * jwt: "xxxxx.yyyyy.zzzzz"
 
-Then the redirect URL would be: https://app.waggl.com/i/9745804b?sso\_jwt=xxxxx.yyyyy.zzzzz]
+Then the redirect URL would be: https://app.waggl.com/i/9745804b?sso_jwt=xxxxx.yyyyy.zzzzz]
 
 ## Example Files
 
-A Dot Net example is [here.](https://raw.githubusercontent.com/waggl/waggl_jwt_sso/master/example_code/dot_net.cs)
+You can view example code for different languages below:
 
-A Ruby on Rails example is [here.](https://raw.githubusercontent.com/waggl/waggl_jwt_sso/master/example_code/ssos_controller.rb)
+- [Dot Net](https://github.com/waggl/waggl_jwt_sso/blob/master/example_code/dot_net.cs)
+
+- [Ruby on Rails] (https://github.com/waggl/waggl_jwt_sso/blob/master/example_code/ssos_controller.rb)
 
 
 
