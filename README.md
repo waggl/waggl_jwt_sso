@@ -37,7 +37,7 @@ See [http://jwt.io/#libraries](http://jwt.io/#libraries) to find a JWT library i
 		
 	}
 
-Note: Dates should be the number of seconds since the Epoch (1970-01-01T00:00:00Z UTC).
+Notes: Dates should be the number of seconds since the Epoch (1970-01-01T00:00:00Z UTC).  If your company has already been using Waggl, then you will want to make sure that the email address you pass is the same as what participants would already have entered.  For example, if John Smith entered email address john.smith@yourcompany.com already in the system you don't want to pass jsmith@yourcompany.com or their previous activity will not be linked.   
 
 ## Including Tags in JWT Token
 
