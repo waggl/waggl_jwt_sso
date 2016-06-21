@@ -1,3 +1,4 @@
+var wagglURL = 'app.waggl.com'
 var secret_key = 'adskfjlksflksgjl'
 
 DateTime now_ = DateTime.UtcNow;

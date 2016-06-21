@@ -6,7 +6,8 @@ if (!$_SERVER['REMOTE_USER']) exit;
 list($uid, $domain) = explode('@', $_SERVER['REMOTE_USER'], 2);
 setup_ldap();
 $email = get_ldap_info($uid, ‘email’);
- 
+
+$host = 'app.waggl.com'
 $key = 'abcdefg234859';  #replace with your secret key
 $data = array();
 $data['email'] = $email;
